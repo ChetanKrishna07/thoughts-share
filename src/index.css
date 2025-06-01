@@ -1,0 +1,74 @@
+/* Import fonts */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Rubik:wght@600&display=swap");
+@import "tailwindcss";
+
+@theme {
+  /* Fonts */
+  --font-inter: Inter, Arial, Helvetica, sans-serif;
+  --font-rubik: Rubik, Arial, Helvetica, sans-serif;
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-rubik);
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+
+  /* Colors */
+  --color-background: #f6f8fc;
+  --color-primary: #4c6ef5;
+  --color-soft-accent: #8ecae6;
+  --color-card: #ffffff;
+  --color-border: #e0e7ff;
+  --color-text-primary: #2e2e2e;
+  --color-muted: #6b7280;
+  --color-helper: #9ca3af;
+}
+
+@layer base {
+  h1 {
+    @apply text-3xl font-display font-semibold leading-10;
+  }
+  h2 {
+    @apply text-2xl font-display font-semibold leading-8;
+  }
+  h3 {
+    @apply text-xl font-display font-semibold leading-6;
+  }
+  h4 {
+    @apply text-lg font-display font-semibold leading-5;
+  }
+  h5 {
+    @apply text-base font-display font-semibold leading-6;
+  }
+  h6 {
+    @apply text-sm font-display font-semibold leading-5;
+  }
+  body {
+    @apply font-sans text-text-primary bg-background;
+  }
+}
+
+@layer components {
+  .card,
+  .canvas {
+    @apply bg-card border border-border rounded-lg shadow-sm p-6;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center px-4 py-2 
+    text-sm font-medium text-white bg-primary 
+    border border-transparent rounded-md shadow-sm 
+    hover:bg-primary/90 hover:scale-105
+    transition-all duration-100
+    cursor-pointer;
+  }
+
+  .login-icon-btn {
+    @apply text-4xl cursor-pointer hover:scale-105 transition-all duration-200;
+  }
+
+  .input-field {
+    @apply w-[25vw] px-3 py-2 text-sm 
+    bg-card border border-border rounded-md hover:shadow-sm 
+    focus:outline-none focus:ring-2 focus:ring-primary;
+  }
+}

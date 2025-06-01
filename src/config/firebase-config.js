@@ -1,6 +1,7 @@
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import { getAuth, GoogleAuthProvider } from "firebase/auth";
+import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: "AIzaSyBEFqLk964uI8YMOwYnWzjkxkyE4QGuRds",
@@ -9,7 +10,7 @@ const firebaseConfig = {
   storageBucket: "thoughts-share-79682.firebasestorage.app",
   messagingSenderId: "692068945144",
   appId: "1:692068945144:web:9ff9b0326edb61d7dc7f0d",
-  measurementId: "G-JCR15LWTNK"
+  measurementId: "G-JCR15LWTNK",
 };
 
 // Initialize Firebase
@@ -18,4 +19,5 @@ const analytics = getAnalytics(app);
 
 // Setting up authentication
 export const auth = getAuth(app);
-export const provider = new GoogleAuthProvider();
+export const googleProvider = new GoogleAuthProvider();
+export const db = getFirestore(app);
